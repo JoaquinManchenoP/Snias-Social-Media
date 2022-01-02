@@ -2,7 +2,10 @@
     flex:3;
     height:calc(100vh - 50px);
     overflow-y: scroll;
+    position:sticky;
+    top: 50px;
 }
+
 ::-webkit-scrollbar{
     width:8px;
 }
@@ -48,19 +51,6 @@
 
 .lefBarFriendList{
     padding: 0;
-    margin: 0;
+    margin: 20px;
 }
 
-.leftBarFriend{
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.leftBarFirendImg{
-    width: 42px;
-    height: 42px;
-    border-radius: 50px;
-    object-fit: cover;
-
-}

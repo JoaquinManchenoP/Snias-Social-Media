@@ -8,6 +8,8 @@ import HelpIcon from '@mui/icons-material/Help';
 import WorkIcon from '@mui/icons-material/Work';
 import TodayIcon from '@mui/icons-material/Today';
 import SchoolIcon from '@mui/icons-material/School';
+import { Users } from "../../dummyData";
+import CloseFirend from '../CloseFriend/CloseFirend';
 
 export default function LeftBar() {
     return (
@@ -53,65 +55,10 @@ export default function LeftBar() {
                 </ul>
                 <button className='leftBarButton'>More</button>
                 <hr className='leftBarHr'/>
-                <ul className='lefBarFriendList'>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    <li className='leftBarFriend'>
-                        <img className='leftBarFirendImg' src ='/Assets/Person/man2profile.jpg' alt = ''></img>
-                        <span className='leftBarFriendName'>Joaquin Mancheno</span>
-                    </li>
-                    
+                <ul className='lefBarFriendList'>  
+                    {Users.map(user => (
+                        <CloseFirend key = {user.id} user = {user}/>
+                    ))}               
                 </ul>
             </div>
         </div>

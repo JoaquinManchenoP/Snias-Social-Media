@@ -1,0 +1,18 @@
+.leftBarFriend{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.leftBarFirendImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    object-fit: cover;
+
+}
+
+.leftBarFriendName{
+    font-weight: 500;
+    margin-left: 12px;
+}
