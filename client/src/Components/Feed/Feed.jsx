@@ -7,16 +7,19 @@ import axios from "axios";
 import { formControlUnstyledClasses } from "@mui/material";
 
 
-export default function Feed() {
+export default function Feed({username}) {
     const [posts, setPosts] = useState([]);
     const [text, setText] = useState('');
-    
+   
     useEffect( () => {
-        const fetchData  =  async () => {
-        const res = await axios.get('api/posts/timeline/61e820fab01efd3e5d0ec949');
+        const fetchPosts  =  async () => {
+        const res = username 
+        ? await axios.get(`/api/posts/profile/${username}`)
+        : await axios.get('api/posts/timeline/61e820fab01efd3e5d0ec949')
         setPosts(res.data)
+
         }
-        fetchData();
+        fetchPosts();
     },[]);
 
 

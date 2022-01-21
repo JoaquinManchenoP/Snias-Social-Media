@@ -6,7 +6,9 @@ import axios from 'axios';
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en.json'
 import us from 'javascript-time-ago/locale/ru.json'
-import ReactTimeAgo from 'react-time-ago'
+import ReactTimeAgo from 'react-time-ago';
+import { Link } from "react-router-dom";
+import { color } from '@mui/system';
 
 
 
@@ -17,16 +19,16 @@ export default function Post({post}) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     TimeAgo.addDefaultLocale(en)
 
+   
+
     useEffect( () => {
-        const fetcUser  =  async () => {
-        const res = await axios.get(`api/users/${post.userId}`);
-        setUser(res.data)
+        const fetchUser  =  async () => {
+            const res = await axios.get(`/api/users?userId=${post.userId}`);
+            setUser(res.data)
         console.log(user.userId);
     }
-        fetcUser();
+        fetchUser();
     },[post.userId]);
-
-    console.log(user)
 
     const likeHandler = () => {
         setLike(isLiked ? like -1 : like+1);
@@ -38,11 +40,13 @@ export default function Post({post}) {
         <div className='post'>
             <div className="postWrapper">
                 <div className="postTop">
+                    <Link className='postProfileLink' to = {`profile/${user.username}`}  style={{'text-decoration':'none'}}>
                     <div className="postTopLeft">
-                        <img className='postProfileImg' src = {user.profilePicture || `${PF}Person/noAvatar.jpeg`} alt=''></img>
-                        <span className="postUsername">{user.username}</span>
-                        <ReactTimeAgo className="postDate" date = {post.createdAt}/>
+                            <img className='postProfileImg' src = {user.profilePicture || `${PF}Person/noAvatar.jpeg`} alt=''></img>
+                            <span className="postUsername">{user.username}</span>
+                            <ReactTimeAgo className="postDate" date = {post.createdAt}/>
                     </div>
+                    </Link>
                     <div className="postTopRight">
                         <MoreVertIcon/>
                     </div>
