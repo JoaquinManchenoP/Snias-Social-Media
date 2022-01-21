@@ -1,20 +1,20 @@
 export const Users = [
     {
         id:1,
-        profilePicture: 'Assets/Person/thiago.jpg',
+        profilePicture: 'Person/thiago.jpg',
         username: 'Thiago Alcantara'
     },
     {
         id:2,
-        profilePicture: 'Assets/Person/person2.jpeg',
+        profilePicture: 'Person/person2.jpeg',
         username: 'Charles De Sousa'
     },
     {   id:3,
-        profilePicture: 'Assets/Person/woman.jpeg',
+        profilePicture: 'Person/woman.jpeg',
         username: 'Kathleen Smith'  
     },
     {   id:4,
-        profilePicture: 'Assets/Person/man2profile.jpg',
+        profilePicture: 'Person/man2profile.jpg',
         username: 'Jose Ramirez'  
     }
 ];
@@ -23,7 +23,7 @@ export const Posts = [
     {
         id:1,
         desc: 'Love this sport',
-        photo: 'Assets/Posts/thiagoGoal.jpeg',
+        photo: 'Posts/thiagoGoal.jpeg',
         date: "8 mins ago",
         userId:1,
         like: 47,
@@ -32,7 +32,7 @@ export const Posts = [
     {
         id:2,
         desc: 'Awesome Trip',
-        photo: 'Assets/Posts/landscape.jpeg',
+        photo: 'Posts/landscape.jpeg',
         date: "14 mins ago",
         userId:2,
         like: 18,
@@ -41,7 +41,7 @@ export const Posts = [
     {
         id:3,
         desc: 'New recipe',
-        photo: 'Assets/Posts/food.jpeg',
+        photo: 'Posts/food.jpeg',
         date: "26 mins ago",
         userId:3,
         like: 62,
@@ -50,7 +50,7 @@ export const Posts = [
     {
         id:4,
         desc: 'Amazing experience',
-        photo: 'Assets/Posts/stadium.jpg',
+        photo: 'Posts/stadium.jpg',
         date: "35 mins ago",
         userId:4,
         like: 28,

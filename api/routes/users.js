@@ -18,12 +18,13 @@ router.put("/:id", async (req, res) => {
       const user = await User.findByIdAndUpdate(req.params.id, {
         $set: req.body,
       });
+      console.log('hello');
       res.status(200).json("Account has been updated");
     } catch (err) {
       return res.status(500).json(err);
     }
   } else {
-    return res.status(403).json("You can update only your account");
+    return res.status(403).json("You can update only your account!");
   }
 });
 
@@ -58,24 +59,25 @@ router.get('/:id', async (req, res) => {
 //Follow a user
 
 router.put("/:id/follow", async (req, res) => {
-    if (req.body.userId !== req.params.id) {
-      try {
-        const user = await User.findById(req.params.id);
-        const currentUser = await User.findById(req.body.userId);
-        if (!user.followers.includes(req.body.userId)) {
-          await user.updateOne({ $push: { followers: req.body.userId } });
-          await currentUser.updateOne({ $push: { following: req.params.id } });
-          res.status(200).json("You are now following this user");
-        } else {
-          res.status(403).json("you allready follow this user");
-        }
-      } catch (err) {
-        res.status(500).json(err);
+  if (req.body.userId !== req.params.id) {
+    try {
+      const user = await User.findById(req.params.id);
+      const currentUser = await User.findById(req.body.userId);
+      console.log(currentUser);
+      if (!user.followers.includes(req.body.userId)) {
+        await user.updateOne({ $push: { followers: req.body.userId } });
+        await currentUser.updateOne({ $push: { following: req.params.id } });
+        res.status(200).json("user has been followed");
+      } else {
+        res.status(403).json("you allready follow this user");
       }
-    } else {
-      res.status(403).json("You can\'t follow yourself");
+    } catch (err) {
+      res.status(500).json(err);
     }
-  });
+  } else {
+    res.status(403).json("you cant follow yourself");
+  }
+});
 
 
 //unfollow a user 

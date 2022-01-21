@@ -6,6 +6,8 @@ import RightBar from "../../Components/RightBar/RightBar";
 import './profile.css';
 
 export default function Profile() {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    
     return (
         <>
         <TopBar/>
@@ -14,8 +16,8 @@ export default function Profile() {
             <div className="profileRight">
                 <div className="profileRightTop">
                     <div className="profileCover">
-                        <img className='profileCoverImg' src = '/Assets/Posts/thiagoGoal.jpeg' alt = ''></img>
-                        <img className='profileUserImg' src = '/Assets/Person/thiago.jpg' alt = ''></img>
+                        <img className='profileCoverImg' src = {`${PF}Posts/thiagoGoal.jpeg`} alt = ''></img>
+                        <img className='profileUserImg' src = {`${PF}Person/thiago.jpg`} alt = ''></img>
                     </div>
                     <div className="profileInfo">
                         <h4 className='profileInfoName'>Thiago Alcantara</h4>

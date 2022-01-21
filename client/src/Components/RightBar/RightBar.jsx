@@ -3,17 +3,17 @@ import Online from '../Online/Online';
 import { Users } from '../../dummyData';
 
 export default function RightBar({profile}) {
-
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const HomeRightBar = () => {
         return (
             <>
                 <div className="birthdayContainer">
-                    <img className='birthdayImg' src = '/Assets/Icons/cake.png' alt = ''></img>
+                    <img className='birthdayImg' src = {`${PF}Icons/cake.png`} alt = ''></img>
                     <span className="birthdayText">
                         <b>Pola Foster</b> and <b>3 other firends</b> have a birthday today
                     </span>
                 </div>
-                    <img className="rightbarAd" src='/Assets/Ads/sneakerAd.png' alt=""/>
+                    <img className="rightbarAd" src={`${PF}Ads/sneakerAd.png`} alt=""/>
                     <h4 className="rightbarTitle">Online Friends</h4>
                     <ul className='rightbarFriendList'>
                         {Users.map(user => (

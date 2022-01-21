@@ -5,6 +5,7 @@ const User = require('../models/User');
 //create a new post
 
 router.post("/", async (req, res) => {
+  console.log('helllo');
     const newPost = new Post(req.body);
     try {
         const savedPost = await newPost.save();
@@ -75,20 +76,21 @@ router.get("/:id", async (req, res) => {
   
 
 //Get post timeline
-router.get("/timeline/all", async (req, res) => {
-    try {
-      const currentUser = await User.findById(req.body.userId);
-      const userPosts = await Post.find({ userId: currentUser._id });
-      const friendPosts = await Promise.all(
-        currentUser.following.map((friendId) => {
-          return Post.find({ userId: friendId });
-        })
-      );
-      res.json(userPosts.concat(...friendPosts))
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+router.get("/timeline/:userId", async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.params.userId);
+    const userPosts = await Post.find({ userId: currentUser._id });
+    const friendPosts = await Promise.all(
+      currentUser.following.map((friendId) => {
+        return Post.find({ userId: friendId });
+      })
+    );
+    console.log(friendPosts);
+    res.status(200).json(userPosts.concat(...friendPosts));
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 module.exports = router;

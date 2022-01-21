@@ -6,9 +6,14 @@ const dotenv = require('dotenv');
 const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/post');
+const cors = require("cors");
+
+
+    
 
 dotenv.config();
 const app = express();
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_URL, () => {
     console.log('Connection to MongoDB successfull')
