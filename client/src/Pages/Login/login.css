@@ -63,6 +63,10 @@
     cursor: pointer;
 }
 
+.loginButton:disabled{
+    cursor: not-allowed;
+}
+
 .forgotPassword{
     text-align: center;
     color:#D8315B;
