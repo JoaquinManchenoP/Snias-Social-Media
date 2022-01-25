@@ -9,6 +9,9 @@ import us from 'javascript-time-ago/locale/ru.json'
 import ReactTimeAgo from 'react-time-ago';
 import { Link } from "react-router-dom";
 import { color } from '@mui/system';
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthContext';
+
 
 
 
@@ -17,9 +20,12 @@ export default function Post({post}) {
     const [isLiked, setIsLiked] = useState(false);
     const [user, setUser] = useState({})
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-    TimeAgo.addDefaultLocale(en)
+    TimeAgo.addLocale(en)
+    const {user:currentUser} = useContext(AuthContext)
 
-   
+    useEffect(() => {
+        setIsLiked(post.likes.includes(currentUser._id))
+    },[currentUser.id, post.likes])
 
     useEffect( () => {
         const fetchUser  =  async () => {
@@ -31,8 +37,14 @@ export default function Post({post}) {
     },[post.userId]);
 
     const likeHandler = () => {
+        console.log(post._id)
+        try {
+            axios.put("/api/posts/"+post._id+"/like", {userId:currentUser._id});
+        } catch (error) {
+            
+        }
         setLike(isLiked ? like -1 : like+1);
-        setIsLiked(!isLiked);
+        setIsLiked(!isLiked); 
     }
 
 
@@ -42,7 +54,7 @@ export default function Post({post}) {
                 <div className="postTop">
                     <Link className='postProfileLink' to = {`profile/${user.username}`}  style={{'text-decoration':'none'}}>
                     <div className="postTopLeft">
-                            <img className='postProfileImg' src = {user.profilePicture || `${PF}Person/noAvatar.jpeg`} alt=''></img>
+                            <img className='postProfileImg' src = {user.profilePicture ? user.profilePicture : `${PF}Person/noAvatar.jpeg`} alt=''></img>
                             <span className="postUsername">{user.username}</span>
                             <ReactTimeAgo className="postDate" date = {post.createdAt}/>
                     </div>
