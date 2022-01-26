@@ -29,8 +29,8 @@ export default function Profile() {
             <div className="profileRight">
                 <div className="profileRightTop">
                     <div className="profileCover">
-                        <img className='profileCoverImg' src = {user.coverPicture ||  `${PF}Ads/emptyCoverPicture.jpeg`} alt = ''></img>
-                        <img className='profileUserImg' src ={user.profilePicture || `${PF}Person/noAvatar.jpeg`} alt = ''></img>
+                        <img className='profileCoverImg' src = {user.coverPicture ? user.coverPicture : `${PF}Ads/emptyCoverPicture.jpeg`} alt = ''></img>
+                        <img className='profileUserImg' src ={user.profilePicture || user.profilePicture :`${PF}Person/noAvatar.jpeg`} alt = ''></img>
                     </div>
                     <div className="profileInfo">
                         <h4 className='profileInfoName'>{username}</h4>

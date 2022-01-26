@@ -47,7 +47,6 @@ export default function Post({post}) {
         setIsLiked(!isLiked); 
     }
 
-
     return (
         <div className='post'>
             <div className="postWrapper">
@@ -65,7 +64,7 @@ export default function Post({post}) {
                 </div>
                 <div className="postCenter">
                     <span className="postText">{post?.desc}</span>
-                    <img className='postImg' src ={post.img}  alt = ''></img>
+                    <img className='postImg' src ={PF+post.img}  alt = ''></img>
                 </div>
                 <div className="postBottom">
                     <div className="postBottomtLeft">
