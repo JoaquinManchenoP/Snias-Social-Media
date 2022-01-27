@@ -32,7 +32,7 @@ export default function Register() {
     }
 
     return (
-        <dißv  className='login'>
+        <div  className='login'>
             <div className="loginWrapper">
                 <div className="loginLeft">
                     <h3 className='loginLogo'>Snias</h3>
@@ -49,6 +49,6 @@ export default function Register() {
                     </form>
                 </div>
             </div>
-        </dißv>
+        </div>
     )
 }

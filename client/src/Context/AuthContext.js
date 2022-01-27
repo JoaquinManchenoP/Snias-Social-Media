@@ -3,16 +3,16 @@ import { createContext } from "react"
 import AuthReducer from "./AuthReducer";
 
 const INITIAL_STATE = {
-    user: {
-    _id:"61e820fab01efd3e5d0ec949",
-    username:"Joaquin",
-    email:"joaquin@email.com",
-    profilePicture:"",
-    coverPicture:"",
-    followers:Array,
-    following:Array,
-    isAdmin:false
-    },
+    user:null
+        // _id:"61f556f2951f2da7825da06e",
+        // username:"Carlos Gonzales",
+        // email:"carlosgonzales@email.com",
+        // profilePicture:"https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        // coverPicture:"https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        // followers:[],
+        // following:['61f555f3951f2da7825da06a'],
+        // isAdmin:false
+    ,
     isFetching: false,
     errror:false
 }

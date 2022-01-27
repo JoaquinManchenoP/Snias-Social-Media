@@ -66,7 +66,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 
   }
   
@@ -86,6 +86,20 @@
     height: 115px;
     object-fit: cover;
     border-radius: 5px;
+  }
+
+  .rightBarFollowButton{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #3E92CC;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+
   }
 
 
