@@ -4,6 +4,7 @@ import PermMediaIcon from '@mui/icons-material/PermMedia';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import LabelIcon from '@mui/icons-material/Label';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CancelIcon from '@mui/icons-material/Cancel';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import { useState } from 'react';
@@ -50,6 +51,12 @@ export default function Share() {
                     <input placeholder={"What's on your mind "+user.username+" ? "} className='shareInput' ref = {desc}></input>
                 </div>
                 <hr className='shareHr'/>
+                {file && (
+                    <div className="shareImageContainer">
+                        <img src={URL.createObjectURL(file)} alt="" className='shareImage' />
+                        <CancelIcon onClick = {() => setFile(null)} className='shareCancelImg'/>
+                    </div>
+                )}
                 <form className="shareBottom" onSubmit={submitHandler}>
                     <div className="shareOptions">
                         <label htmlFor='file' className="shareOption">
