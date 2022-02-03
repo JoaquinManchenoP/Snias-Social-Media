@@ -4,8 +4,7 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Profile from "./Pages/Profile/Profile";
 import { useContext } from "react";
-import { AuthContext } from "./Context/AuthContext";
-import Messenger from "./Pages/Messenger/Messenger"; 
+import { AuthContext } from "./Context/AuthContext"; 
 
 
 
@@ -18,7 +17,6 @@ function App() {
     <Route exact path="/login" element={user ? <Navigate to = '/' />: <Login />} />
     <Route path="/register" element={user ? <Navigate to = '/'/> :<Register/>} />
     <Route path="/profile/:username" element={<Profile />} />
-    <Route path="/messenger" element={!user ? <Navigate to = '/'/> :<Messenger/>} />
   </Routes>
   );
 }

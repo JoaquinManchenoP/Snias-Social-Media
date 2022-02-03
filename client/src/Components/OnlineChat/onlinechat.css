@@ -1,0 +1,34 @@
+.onlineChat{
+    margin-top: 20px;
+}
+
+.onlineChatFriend{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.chatOnlineImage{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.onlineChatImageContainer{
+    position:relative;
+    margin-right: 10px;
+}
+
+.chatOnlineBadge{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: limegreen;
+    position:absolute;
+    top: 0px;
+    right: 18px;
+    border: 2px solid white;
+}

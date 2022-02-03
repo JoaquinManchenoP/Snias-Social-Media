@@ -6,6 +6,8 @@ const dotenv = require('dotenv');
 const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/post');
+const conversationRoute = require('./routes/conversations');
+const messageRoute = require('./routes/messages');
 const cors = require("cors");
 const multer = require("multer");
 const req = require('express/lib/request');
@@ -46,6 +48,9 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 app.use('/api/users', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/posts' , postRoute);
+app.use('/api/conversations' , conversationRoute);
+app.use('/api/messages' , messageRoute);
+
 
 app.listen(8000, () => {
     console.log('Backend server running');
