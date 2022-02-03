@@ -52,7 +52,7 @@ export default function RightBar({user}) {
                 <div className="birthdayContainer">
                     <img className='birthdayImg' src = {`${PF}Icons/cake.png`} alt = ''></img>
                     <span className="birthdayText">
-                        <b>Pola Foster</b> and <b>3 other firends</b> have a birthday today
+                        <b>3 friends</b> have a birthdays today
                     </span>
                 </div>
                     <img className="rightbarAd" src={`${PF}Ads/sneakerAd.png`} alt=""/>
