@@ -35,7 +35,7 @@ export default function Profile() {
                     </div>
                     <div className="profileInfo">
                         <h4 className='profileInfoName'>{username}</h4>
-                        <span className="profileInfoDesc">hello friends</span>
+                        <span className="profileInfoDesc">Hi I am {username}</span>
                     </div>
                 </div>
                 <div className="profileRightBottom">

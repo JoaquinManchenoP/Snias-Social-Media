@@ -1,12 +1,11 @@
 import './rightbar.css';
-import Online from '../Online/Online';
-import { Users } from '../../dummyData';
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { FilterBAndWSharp, Remove } from '@mui/icons-material';
 import {Link} from "react-router-dom"
 import { AuthContext } from '../../Context/AuthContext';
 import AddIcon from '@mui/icons-material/Add';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export default function RightBar({user}) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -56,12 +55,7 @@ export default function RightBar({user}) {
                     </span>
                 </div>
                     <img className="rightbarAd" src={`${PF}Ads/sneakerAd.png`} alt=""/>
-                    <h4 className="rightbarTitle">Online Friends</h4>
-                    <ul className='rightbarFriendList'>
-                        {Users.map(user => (
-                            <Online key = {user.id} user = {user}/>
-                        ))}
-                    </ul>
+                    <img className="rightbarAd" src={`${PF}Ads/cocaColaAdd.jpeg`} alt=""/>
             </>
         );
     };
@@ -69,12 +63,16 @@ export default function RightBar({user}) {
     const ProfileRightBar = () => {
         return(
             <>
-            {user.username !== currentUser.username && (
+            {user.username !== currentUser.username ? (
                 <button className='rightBarFollowButton' onClick={handleClick}>
                     {followed ? 'Unfollow' : 'Follow'}
                     {followed ? <Remove/> : <AddIcon/>}
                 </button>
-            )}
+            ) : (
+            <button className='rightBarFollowButton'>
+               <span>Log Out</span> 
+               <LogoutIcon/>
+            </button>)}
                 <h4 className='rightbarTitle'> User Information</h4>
                 <div className="rightbarInfo">
                     <div className="rightbarInfoItem">
