@@ -3,8 +3,7 @@
 This is an application that seeks to replicate the basic functionality of some of the most popular social media platforms such as Facebook and tweeter by allowing users to follow their friends, like their posts, and create posts of their own and as well as shating image with their friends.
 <br/>
 
-
-![Alt text](/screenshot1.png?raw=true screenshot1")
+![Alt text](/screenshot1.png?raw=true "screenshot1")
 <br/>
 ![Alt text](/screenshot2.png?raw=true "screenshot2")
 
