@@ -4,9 +4,9 @@ This is an application that seeks to replicate the basic functionality of some o
 <br/>
 
 
-![Alt text](/screenshot1.png?raw=true "Screenshot1")
+![Alt text](/screenshot1.png?raw=true screenshot1")
 <br/>
-![Alt text](/screenshot2.png?raw=true "Screenshot2")
+![Alt text](/screenshot2.png?raw=true "screenshot2")
 
 
 
