@@ -17,17 +17,27 @@ This project was built using react.js for the front end, node.js with express fo
 <br/>
 * git clone https://github.com/JoaquinManchenoP/snias-social-media.git
 <br/>
+
+* cd snias-social-media
+<br/>
+
 * cd api
 <br/>
+
 * npm install
 <br/>
+
 * npm start
 <br/>
+
 * cd ../
 <br/>
+
 * cd client 
 <br/>
+
 * npm install
 <br/>
+
 * npm start
 <br/>
